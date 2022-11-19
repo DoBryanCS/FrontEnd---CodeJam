@@ -29,20 +29,18 @@ import React from "react";
                   <Components.Overlay signinIn={signIn}>
 
                   <Components.LeftOverlayPanel signinIn={signIn}>
-                      <Components.Title>The Next Amazon</Components.Title>
+                      <Components.Title>Verify</Components.Title>
                       <Components.Paragraph>
-                          za za za za za za za za za za za za za za za za za za za
-                      </Components.Paragraph>
+                            Detect unwelcome visitors by recognising faces that have previously been flagged, before alerting local security or management to the presence.                      </Components.Paragraph>
                       <Components.GhostButton onClick={() => toggle(true)}>
                           Sign In
                       </Components.GhostButton>
                       </Components.LeftOverlayPanel>
 
                       <Components.RightOverlayPanel signinIn={signIn}>
-                        <Components.Title>The Next Amazon</Components.Title>
+                        <Components.Title>Verify</Components.Title>
                         <Components.Paragraph>
-                            za za za za za za za za za za za za za za za za za za za
-                        </Components.Paragraph>
+                            Detect unwelcome visitors by recognising faces that have previously been flagged, before alerting local security or management to the presence.                        </Components.Paragraph>
                             <Components.GhostButton onClick={() => toggle(false)}>
                                 Sign Up
                             </Components.GhostButton> 
