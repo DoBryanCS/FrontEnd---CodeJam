@@ -31,18 +31,20 @@ import {useNavigate} from "react-router-dom";
                   <Components.Overlay signinIn={signIn}>
 
                   <Components.LeftOverlayPanel signinIn={signIn}>
-                      <Components.Title>Verify</Components.Title>
+                      <Components.Title>Eagle Eye</Components.Title>
                       <Components.Paragraph>
-                            Detect unwelcome visitors by recognising faces that have previously been flagged, before alerting local security or management to the presence.                      </Components.Paragraph>
+                            Detect undesirable visitors by identifying faces and determining if the guest is in the database through an algorithm powered by AI and Machine Learning.
+                      </Components.Paragraph>
                       <Components.GhostButton onClick={() => toggle(true)}>
                           Sign In
                       </Components.GhostButton>
                       </Components.LeftOverlayPanel>
 
                       <Components.RightOverlayPanel signinIn={signIn}>
-                        <Components.Title>Verify</Components.Title>
+                        <Components.Title>Eagle Eye</Components.Title>
                         <Components.Paragraph>
-                            Detect unwelcome visitors by recognising faces that have previously been flagged, before alerting local security or management to the presence.                        </Components.Paragraph>
+                            Detect undesirable visitors by identifying faces and determining if the guest is in the database through an algorithm powered by AI and Machine Learning.
+                        </Components.Paragraph>
                             <Components.GhostButton onClick={() => toggle(false)}>
                                 Sign Up
                             </Components.GhostButton> 
