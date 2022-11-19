@@ -6,9 +6,9 @@
  box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 0 10px 10px rgba(0, 0, 0, 0.22);
  position: relative;
  overflow: hidden;
- width: 770px;
+ width: 678px;
  max-width: 100%;
- min-height: 450px;
+ min-height: 400px;
  `;
 
  export const SignUpContainer = styled.div`
@@ -151,10 +151,9 @@ ${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
  `;
 
  export const Paragraph = styled.p`
- font-size: 15px;
+ font-size: 14px;
    font-weight: 100;
    line-height: 20px;
    letter-spacing: 0.5px;
-   margin: 20px 0 30px;
-   text-align: left;
+   margin: 20px 0 30px
  `;
