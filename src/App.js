@@ -3,6 +3,7 @@ import React from "react";
 
  function App() {
      const [signIn, toggle] = React.useState(true);
+     const navigate = useNavigate();
       return(
           <Components.Container>
               <Components.SignUpContainer signinIn={signIn}>
@@ -21,7 +22,7 @@ import React from "react";
                        <Components.Input type='email' placeholder='Email' />
                        <Components.Input type='password' placeholder='Password' />
                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button>Sign In</Components.Button>
+                       <Components.Button onClick={()=> navigate("/importFaces")}>Sign In</Components.Button>
                    </Components.Form>
               </Components.SignInContainer>
 
