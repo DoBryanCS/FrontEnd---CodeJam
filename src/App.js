@@ -23,7 +23,7 @@ import {useNavigate} from "react-router-dom";
                        <Components.Input type='email' placeholder='Email' />
                        <Components.Input type='password' placeholder='Password' />
                        <Components.Anchor href='#'>Forgot your password?</Components.Anchor>
-                       <Components.Button onClick={()=> navigate("/importFaces")}>Sign In</Components.Button>
+                       <Components.Button onClick={()=> navigate("/addName")}>Sign In</Components.Button>
                    </Components.Form>
               </Components.SignInContainer>
 

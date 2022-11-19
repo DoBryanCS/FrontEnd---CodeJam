@@ -1,6 +1,6 @@
 import React from "react";
 
-function ImportFaces() {
+function AddFace() {
 
   return (
     <div>
@@ -9,4 +9,4 @@ function ImportFaces() {
   )
 }
 
-export default ImportFaces
+export default AddFace;
