@@ -1,6 +1,7 @@
 import React from "react";
-function Import() {
-    
+
+function ImportFaces() {
+
   return (
     <div>
         allo
@@ -8,4 +9,4 @@ function Import() {
   )
 }
 
-export default Import
+export default ImportFaces
