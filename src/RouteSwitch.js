@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import App from "./importFaces";
-import Import from "./Import";
+import App from "./App";
+import Import from "./ImportFaces";
 
 const RouteSwitch = () => {
   return (
