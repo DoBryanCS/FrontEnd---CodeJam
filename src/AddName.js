@@ -1,11 +1,18 @@
+// React
 import React from "react";
 import { useState } from 'react';
+import { useNavigate } from "react-router-dom";
+
+// Firebase
+import { getDatabase, ref, push } from "firebase/database";
+import { getStorage, uploadBytes, ref as sRef } from 'firebase/storage'
+import { initializeApp } from "firebase/app";
+
+// Components
 import SignUpInfo from "./SignUpInfo";
 import SubmitPhotos from "./SubmitPhotos";
 import Confirm from "./Confirm"
 import "./App.css"
-import { getDatabase, ref } from "firebase/database";
-import { initializeApp } from "firebase/app";
 
 const firebaseConfig = {
   apiKey: "AIzaSyDqu8MFLwT_8w8519gtrrUmkxTIIMVAYJQ",
@@ -18,25 +25,32 @@ const firebaseConfig = {
 };
 
 // Initialize Firebase
-const app = initializeApp(firebaseConfig);
+initializeApp(firebaseConfig);
+const db = getDatabase();
+const storage = getStorage()
+
 
 function AddName() {
+  let navigate = useNavigate();
   const [page, setPage] = useState(0);
   const [name, setName] = useState("");
   const [image, setImage] = useState(0)
-
 
   const FormTitles = ["Enter Name", "Import Photos", "Confirm"];
 
   function submitForm() {
     if (name && image) {
-      // const database = getDatabase();
-      const refUsers = ref(database, '/companies/company1');
+      // Ajoute le nom a la real time db
+      const refUsers = ref(db, 'companies/company1/');
+      let newUserRef = push(refUsers, { name: name })
+      const key = newUserRef.key
 
-      //let newUserRef = refUsers.push().set({ name: name })
-      //firebase.database(app).ref().push({name: name})
-      //const id = newUserRef.key
-      //console.log(id)
+      // Ajoute limage dans le storage au nom du id donnee par la db
+      const imageRef = sRef(storage, `company1/${key}.jpg`)
+      uploadBytes(imageRef, image).then(() => {
+        alert("Image Uploaded")
+        navigate('/home')
+      })
     }
   }
 
