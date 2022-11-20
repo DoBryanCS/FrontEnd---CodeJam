@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { storage, db } from "./firebase-config.js";
-import { ref as dbRef, get, child } from "firebase/database";
-import { ref, listAll, getDownloadURL } from "firebase/storage";
+import { ref as dbRef, get, child, getDatabase } from "firebase/database";
+import { ref, listAll, getDownloadURL, getStorage } from "firebase/storage";
 import "./Home.css";
 import {
   createUserWithEmailAndPassword,
@@ -14,6 +14,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 
 function HomePage() {
+
   const navigate = useNavigate();
   const [users, setUsers] = useState("");
   const [urls, setUrls] = useState([]);
@@ -32,7 +33,8 @@ function HomePage() {
 
   useEffect(() => {
     const fetchPersons = async () => {
-      const imgRef = ref(storage, "company1/");
+      let email = sessionStorage.getItem("email")
+      const imgRef = ref(storage, `${email}/`);
       const res = await listAll(imgRef);
 
       const urlPromises = res.items.map((imageRef) => getDownloadURL(imageRef));

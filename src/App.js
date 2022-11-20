@@ -3,10 +3,13 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "./firebase-config"
-import { getDatabase, ref, set } from "firebase/database";
+import { getDatabase, ref, set, push } from "firebase/database";
 import { initializeApp } from "firebase/app";
 
  function App() {
+
+    const db = getDatabase();
+  
 
      const [signIn, toggle] = React.useState(true);
      const navigate = useNavigate();
@@ -29,6 +32,10 @@ import { initializeApp } from "firebase/app";
         try {
             event.preventDefault();
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
+            sessionStorage.setItem("email", registerEmail.replace(".", ""));
+            const refUsers = ref(db, `companies/`);
+            //let newUserRef = push(refUsers)
+            //const key = newUserRef.key
             console.log(user)
             navigate("/homePage")
         } catch (error) {
@@ -42,7 +49,7 @@ import { initializeApp } from "firebase/app";
             event.preventDefault();
             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             console.log(user)
-            sessionStorage.setItem("email", loginEmail);
+            sessionStorage.setItem("email", loginEmail.replace(".", ""));
             navigate("/homePage")
         } catch (error) {
             console.log(error.message)
