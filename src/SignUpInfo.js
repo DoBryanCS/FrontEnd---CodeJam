@@ -1,9 +1,10 @@
 import React from 'react'
 
-function SignUpInfo({formData, setFormData}) {
+function SignUpInfo({ name, setName }) {
+
   return (
     <div className="sign-up-container">
-        <input type="text" placeholder="Name" value={formData.name} onChange={(event) => setFormData({...formData, name: event.target.value})}/>
+      <input type="text" placeholder="Name" value={name} onChange={(event) => setName(event.target.value)} />
     </div>
   )
 }

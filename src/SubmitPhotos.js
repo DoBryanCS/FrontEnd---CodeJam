@@ -1,9 +1,12 @@
 import React from 'react'
 
-function SubmitPhotos() {
+function SubmitPhotos({ setImage }) {
   return (
-    <div className="sign-up-container">        
-      <input type="text" placeholder="Submit Pictures"/>
+    <div className="sign-up-container">
+      <input accept="image/*" type='file' id="imgInp"
+        onChange={(e) => { setImage(e.target.files) }}
+      />
+
     </div>
   )
 }
