@@ -88,12 +88,15 @@
  border-color: #ffffff;
  `;
  
- export const Anchor = styled.a`
- color: #333;
- font-size: 14px;
+ export const Anchor = styled.p`
+ color: #FA6140;
+ font-size: 12px;
+  font-weight: bold;
+  letter-spacing: 1px;
  text-decoration: none;
  margin: 15px 0;
  `;
+
  export const OverlayContainer = styled.div`
 position: absolute;
 top: 0;
@@ -157,3 +160,4 @@ ${props => (props.signinIn !== true ? `transform: translateX(50%);` : null)}
    letter-spacing: 0.5px;
    margin: 20px 0 30px
  `;
+ 
