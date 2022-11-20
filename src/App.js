@@ -3,8 +3,11 @@ import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
 import { createUserWithEmailAndPassword, onAuthStateChanged, signOut, signInWithEmailAndPassword } from "firebase/auth";
 import {auth} from "./firebase-config"
+import { getDatabase, ref, set } from "firebase/database";
+import { initializeApp } from "firebase/app";
 
  function App() {
+
      const [signIn, toggle] = React.useState(true);
      const navigate = useNavigate();
 
