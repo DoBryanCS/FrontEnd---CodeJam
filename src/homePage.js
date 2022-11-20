@@ -12,6 +12,7 @@ import {
 import { auth } from "./firebase-config";
 import { useNavigate, Link } from "react-router-dom";
 
+
 function HomePage() {
   const navigate = useNavigate();
   const [users, setUsers] = useState("");
@@ -20,6 +21,7 @@ function HomePage() {
 
   const logout = async () => {
     await signOut(auth);
+    sessionStorage.clear();
   };
 
   useEffect(() => {

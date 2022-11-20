@@ -39,6 +39,7 @@ import {auth} from "./firebase-config"
             event.preventDefault();
             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             console.log(user)
+            sessionStorage.setItem("key", "value");
             navigate("/homePage")
         } catch (error) {
             console.log(error.message)
