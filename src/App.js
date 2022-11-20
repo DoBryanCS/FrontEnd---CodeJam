@@ -27,7 +27,7 @@ import {auth} from "./firebase-config"
             event.preventDefault();
             const user = await createUserWithEmailAndPassword(auth, registerEmail, registerPassword)
             console.log(user)
-            navigate("/addName")
+            navigate("/homePage")
         } catch (error) {
             console.log(error.message)
             setErrorMessage(error.message)
@@ -95,10 +95,6 @@ import {auth} from "./firebase-config"
                             <Components.GhostButton onClick={() => toggle(false)}>
                                 Sign Up
                             </Components.GhostButton> 
-                            <h4> User Logged In: </h4>
-                            {user?user.email:"Not logged in"}
-
-                            <button onClick={logout}> Sign Out </button>
                       </Components.RightOverlayPanel>
   
                   </Components.Overlay>

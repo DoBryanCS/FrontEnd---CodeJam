@@ -49,7 +49,7 @@ function AddName() {
       const imageRef = sRef(storage, `company1/${key}.jpg`)
       uploadBytes(imageRef, image).then(() => {
         alert("Image Uploaded")
-        navigate('/home')
+        navigate('/homePage')
       })
     }
   }

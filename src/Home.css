@@ -1,3 +1,4 @@
+
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
 
 .App {
@@ -63,9 +64,13 @@
     
   }
   
-  .form-container {
-    width: 400px;
-    height: 400px;
+  .form-containers {
+    padding-top: 300px;
+    padding-bottom: 20px;
+    width: 800px;
+    height:100%;
+    padding-right: 20px;
+    padding-left: 20px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
@@ -77,23 +82,28 @@
 
   }
   
-  .form-container .header {
+  .form-containers .header {
     flex: 20%;
     display: grid;
     place-items: center;
   }
   
-  .form-container .body {
+  .form-containers .body {
     flex: 60%;
+    text-align: center;
   }
   
-  .form-container .footer {
+  .form-containers .header {
     flex: 20%;
     display: flex;
     justify-content: center;
   }
+
+  .thename {
+    color: white;
+  }
   
-  .form-container .footer button {
+  .form-containers .header button {
     border-radius: 25px;
     width: 100px;
     height: 40px;
@@ -104,10 +114,11 @@
     cursor: pointer;
     padding: 10px 5px;
     margin: 10px 5px;
-    margin: 5px;
+    margin-left: 100px;
+    margin-right: 100px;
   }
   
-  .sign-up-container {
+  .sign-up-containers {
     height: 100%;
     width: 100%;
     display: flex;
@@ -116,7 +127,7 @@
     align-items: center;
   }
   
-  .sign-up-container input {
+  .sign-up-containers input {
     margin: 5px;
     width: 200px;
     height: 40px;
@@ -124,7 +135,7 @@
     font-size: 20px;
   }
 
-  .upload-container {
+  .upload-containers {
     height: 100%;
     width: 100%;
     display: flex;
@@ -138,7 +149,7 @@
     cursor: pointer;
   }
   
-  .personal-info-container {
+  .personal-info-containers {
     height: 100%;
     width: 100%;
     display: flex;
@@ -147,7 +158,7 @@
     align-items: center;
   }
   
-  .personal-info-container input {
+  .personal-info-containers input {
     margin: 5px;
     width: 200px;
     height: 40px;
@@ -173,7 +184,7 @@
     background: linear-gradient(to right, #09C6F9, #045DE9);
   }
   
-  .other-info-container {
+  .other-info-containers {
     height: 100%;
     width: 100%;
     display: flex;
@@ -182,7 +193,7 @@
     align-items: center;
   }
   
-  .other-info-container input {
+  .other-info-containers input {
     margin: 5px;
     width: 200px;
     height: 40px;
@@ -233,4 +244,12 @@
     font-weight: bold;
   }
 
- 
+
+img {
+    margin: 10px;
+    width: 170px;
+    height: 170px;
+    border-radius: 20%;
+    border: 5px solid white;
+}
+
