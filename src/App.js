@@ -8,6 +8,7 @@ import {auth} from "./firebase-config"
      const [signIn, toggle] = React.useState(true);
      const navigate = useNavigate();
 
+     const [errorMessage, setErrorMessage] = useState("");
      const [registerEmail, setRegisterEmail] = useState("")
      const [registerPassword, setRegisterPassword] = useState("")
      const [loginEmail, setLoginEmail] = useState("")
@@ -29,6 +30,7 @@ import {auth} from "./firebase-config"
             navigate("/addName")
         } catch (error) {
             console.log(error.message)
+            setErrorMessage(error.message)
         }
      };
 
@@ -37,9 +39,10 @@ import {auth} from "./firebase-config"
             event.preventDefault();
             const user = await signInWithEmailAndPassword(auth, loginEmail, loginPassword)
             console.log(user)
-            navigate("/addName")
+            navigate("/homePage")
         } catch (error) {
             console.log(error.message)
+            setErrorMessage(error.message)
         }
     };
 
@@ -57,6 +60,7 @@ import {auth} from "./firebase-config"
                       <Components.Input type='email' placeholder='Email' onChange={(event) => {setRegisterEmail(event.target.value)}}/>
                       <Components.Input type='password' placeholder='Password' onChange={(event) => {setRegisterPassword(event.target.value)}}/>
                       <Components.Button onClick={register}>Sign Up</Components.Button>
+                      {errorMessage && <div className="error"><Components.Anchor>{errorMessage}</Components.Anchor></div>}
                   </Components.Form>
               </Components.SignUpContainer>
 
@@ -66,6 +70,7 @@ import {auth} from "./firebase-config"
                        <Components.Input type='email' placeholder='Email' onChange={(event) => {setLoginEmail(event.target.value)}}/>
                        <Components.Input type='password' placeholder='Password' onChange={(event) => {setLoginPassword(event.target.value)}}/>
                        <Components.Button onClick={login}>Sign In</Components.Button>
+                       {errorMessage && <div className="error"><Components.Anchor>{errorMessage}</Components.Anchor></div>}
                    </Components.Form>
               </Components.SignInContainer>
 
