@@ -7,9 +7,9 @@ const RouteSwitch = () => {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/" element={<App />} />
-        <Route path="/addName" element={<AddName />} />
-        <Route path="/addFace/:name" element={<AddFace />} />
+        <Route exact path="/" element={<App />} />
+        <Route exact path="/addName" element={<AddName />} />
+        <Route exact path="/addFace/:name" element={<AddFace />} />
       </Routes>
     </BrowserRouter>
   );
