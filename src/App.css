@@ -123,6 +123,20 @@
     padding-left: 5px;
     font-size: 20px;
   }
+
+  .upload-container {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+ 
+  .file-upload {
+    color: white;
+    cursor: pointer;
+  }
   
   .personal-info-container {
     height: 100%;
@@ -143,6 +157,7 @@
   
   /* PROGRESS BAR */
   .progressbar {
+    border-radius:20px;
     width: 400px;
     height: 10px;
     background-color: white;
@@ -150,9 +165,12 @@
   }
   
   .progressbar div {
+    border-radius: 20px;
     width: 33.3%;
     height: 100%;
-    background-color: #009FFD;
+    background: #045DE9;
+    background: -webkit-linear-gradient(to right, #09C6F9, #045DE9);
+    background: linear-gradient(to right, #09C6F9, #045DE9);
   }
   
   .other-info-container {
@@ -201,4 +219,16 @@
 
   .test {
     text-align: center;
+  }
+
+  .confirmPhoto {
+    border: 1px solid rgb(25, 148, 236);
+    border-radius: 10px;
+    width: 40%;
+    height: 40%;
+  }
+
+  .confirmName {
+    color: white;
+    font-weight: bold;
   }

@@ -68,7 +68,7 @@ function AddName() {
     <div className="form">
 
       <div className="progressbar">
-        <div
+        <div className="load"
           style={{ width: `${(page / 2) * 100}%` }}
         ></div>
       </div>
