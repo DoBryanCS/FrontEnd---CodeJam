@@ -41,12 +41,13 @@ function AddName() {
   function submitForm() {
     if (name && image) {
       // Ajoute le nom a la real time db
-      const refUsers = ref(db, 'companies/company1/');
+      let email = sessionStorage.getItem("email")
+      const refUsers = ref(db, `companies/${email}/`);
       let newUserRef = push(refUsers, { name: name })
       const key = newUserRef.key
 
       // Ajoute limage dans le storage au nom du id donnee par la db
-      const imageRef = sRef(storage, `company1/${key}.jpg`)
+      const imageRef = sRef(storage, `${email}/${key}.jpg`)
       uploadBytes(imageRef, image).then(() => {
         alert("Image Uploaded")
         navigate('/homePage')
